@@ -127,6 +127,12 @@ namespace ViewForms
             }
         }
 
+        private void valorCreditoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+                     || ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1));
+        }
+
         private void valorCreditoTextBox_Leave(object sender, EventArgs e)
         {
             if (rendaTextBox.Text.Length == 0)
@@ -139,6 +145,7 @@ namespace ViewForms
                 valorCreditoTextBox.Text = FormatarMoeda(valorCredito);
                 CarregarPropostas(valorCredito);
                 HabilitarCamposValorCredito(false);
+                proposta12RadioButton.Focus();
             }
             else
             {
@@ -195,6 +202,13 @@ namespace ViewForms
             }
 
             ReiniciarProcesso();
+        }
+
+        private void sobreToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("A empresa CréditoParaTodxs é uma empresa multinacional que ajuda milhões de pessoas a conseguirem crédito pessoal. " +
+                "Nessa plataforma você terá a oportunidade de simular e contratar, baseado na saúde financeira, uma operação de empréstimo pessoal, facilitando a vida das pessoas que buscam essa oportunidade." +
+                "\n\nVersão 1.0 desenvolvida por André Hillesheim dos Santos\nE-mail de contato: andrehillsantos@gmail.com", "Sobre CréditoParaTodxs");
         }
     }
 }

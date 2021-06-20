@@ -104,6 +104,7 @@ namespace ViewForms
             this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
             this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
             this.sobreToolStripMenuItem1.Text = "Sobre";
+            this.sobreToolStripMenuItem1.Click += new System.EventHandler(this.sobreToolStripMenuItem1_Click);
             // 
             // rendaTextBox
             // 
@@ -154,6 +155,7 @@ namespace ViewForms
             this.valorCreditoTextBox.Size = new System.Drawing.Size(122, 23);
             this.valorCreditoTextBox.TabIndex = 2;
             this.valorCreditoTextBox.TextChanged += new System.EventHandler(this.valorCreditoTextBox_TextChanged);
+            this.valorCreditoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valorCreditoTextBox_KeyPress);
             this.valorCreditoTextBox.Leave += new System.EventHandler(this.valorCreditoTextBox_Leave);
             // 
             // valorCreditoLabel
